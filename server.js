@@ -5,6 +5,7 @@ const expressEjsLayouts = require('express-ejs-layouts')
 
 const indexRouter = require('./routes (controllers)/index')
 const authorRouter = require('./routes (controllers)/authors')
+const bookRouter = require('./routes (controllers)/books')
 
 const app = express()
 
@@ -17,6 +18,7 @@ app.use(express.urlencoded({ extended: false }))
 
 app.use('/', indexRouter)
 app.use('/authors', authorRouter)
+app.use('/books', bookRouter)
 
 const mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost/mybrary', { useNewUrlParser: true })
