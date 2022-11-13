@@ -21,9 +21,12 @@ app.use('/authors', authorRouter)
 app.use('/books', bookRouter)
 
 const mongoose = require('mongoose')
+const { use } = require('moongose/routes')
 mongoose.connect('mongodb://localhost/mybrary', { useNewUrlParser: true })
 const db = mongoose.connection
 db.on('error', error => console.error(error))
 db.once('open', () => console.error('Connected to Mongoose'))
 
-app.listen(process.env.PORT || 3000)
+app.listen(process.env.PORT || 3000, () => {
+    console.log('Connected on PORT 3000. Consider acessing localhost:3000/')
+})

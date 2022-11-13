@@ -8,7 +8,7 @@
     <select name="author">
 
         <% authors.forEach(author => { %>
-        <option label="<%= author.name %>" name="author" value="<%= author %> "></option>
+        <option label="<%= author.name %>" value="<%= author.id %>"></option>
         <% }) %>
     </select>
 </div>
@@ -22,11 +22,6 @@ book.publishDate.toISOString().split('T')[0] %> ">
 <div>
     <label> Page Count </label>
     <input type="number" name="pageCount" min="1" value="<%= book.pageCount %> ">
-</div>
-
-<div>
-    <label>Cover</label>
-    <input type="file" name="cover">
 </div>
 
 <div>
